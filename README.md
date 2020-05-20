@@ -30,6 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## 目录结构
 
+```
 ├── node_modules
 ├── e2e
 ├── src
@@ -67,3 +68,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ├── tsconfig.json                               # ts 配置文件
 ├── tsconfig.app.jaon
 └── README.md
+```

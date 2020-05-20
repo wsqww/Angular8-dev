@@ -1,0 +1,26 @@
+.menu {
+  background-color: #ddd;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  list-style: none;
+
+  .menu-item {
+
+    a {
+      height: 36px;
+      line-height: 36px;
+      cursor: pointer;
+      outline: 0;
+      display: block;
+      padding: 0 16px;
+      border-bottom: 1px solid #ddd;
+      color: #333;
+      &.active,
+      &:hover {
+        background-color: #fff;
+        color: #33adff;
+      }
+    }
+  }
+}

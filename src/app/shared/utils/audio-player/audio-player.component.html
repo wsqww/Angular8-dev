@@ -1,0 +1,26 @@
+<div class="audio-player">
+  <div class="play-name" [title]="name">{{name}}</div>
+  <div class="play-progress">
+    <p #progressBg class="progress-bar" (mousemove)="mouseMove($event)" (mouseleave)="mouseUp()">
+      <span [ngStyle]="{width: progressRate}">
+        <i #progressDot (mousedown)="mouseDown($event)"></i>
+      </span>
+    </p>
+    <span class="progress-time">{{audioCurrentTime}}/{{audioDuration}}</span>
+  </div>
+  <ul class="play-tools">
+    <li *ngIf="!playing" (click)="play()">播放</li>
+    <li *ngIf="playing" (click)="pause()">暂停</li>
+    <li (click)="rePlay()">重播</li>
+    <li class="volume">
+      <span>音量</span>
+      <div class="volume-bar">
+        <span (click)="changeVolume('+')">+</span>
+        <span>{{audioVolume}}</span>
+        <span (click)="changeVolume('-')">-</span>
+      </div>
+    </li>
+    <!-- <li class="player-close">关闭</li> -->
+  </ul>
+  <audio #audio [src]="src"></audio>
+</div>

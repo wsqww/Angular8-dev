@@ -46,4 +46,4 @@ testem.log
 Thumbs.db
 
 # github warning
-package-lock.json
+/package-lock.json

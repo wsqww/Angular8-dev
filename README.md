@@ -45,7 +45,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 │   │   ├── layout                              # 通用布局
 │   │   │   ├── header                          # 头部
 │   │   │   ├── footer                          # 底部
-│   │   │   └── shared.module.ts                # 通用布局文件
+│   │   │   └── layout.module.ts                # 通用布局文件
 │   │   ├── routes
 │   │   │   ├── **                              # 业务目录
 │   │   │   ├── routes.module.ts                # 业务路由模块
@@ -69,56 +69,3 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ├── tsconfig.app.jaon
 └── README.md
 ```
-
-
-
-
-项目结构
-
-├── node_modules
-├── e2e
-├── src
-│   ├── app
-│   │   ├── core                                # 核心模块
-│   │   │   ├── i18n                            # 国际化
-│   │   │   ├── net
-│   │   │   │   └── default.interceptor.ts      # 默认HTTP拦截器
-│   │   │   ├── services
-│   │   │   │   ├── startup.service.ts          # 初始化项目配置
-│   │   │   │   ├── token.service.ts            # token
-│   │   │   │   ├── auth.service.ts             # 权限相关
-│   │   │   │   └── Api                         # 接口相关
-│   │   │   │   │  ├── login.service.ts
-│   │   │   │   │  ├── system-seting.service.ts
-│   │   │   │   │  ├── mobile.service.ts
-│   │   │   │   │  └── projects.service.ts
-│   │   │   │   └── Guard                       # 导航守卫
-│   │   │   └── core.module.ts                  # 核心模块文件
-│   │   ├── layout                              # 通用布局
-│   │   │   ├── header                          # 头部
-│   │   │   ├── footer                          # 底部
-│   │   │   ├── submenu                         # 侧边栏
-│   │   │   └── layout.module.ts                # 通用布局文件
-│   │   ├── routes
-│   │   │   ├── **                              # 业务目录
-│   │   │   ├── routes.module.ts                # 业务路由模块
-│   │   │   └── routes-routing.module.ts        # 业务路由注册口
-│   │   ├── shared                              # 共享模块
-│   │   │   ├── pipe                            # 管道
-│   │   │   ├── utils                           # 小组件 主要是 单独的 ts/js
-│   │   │   ├── widgets                         # 小部件 主要是 component（例：弹框/进度条/下拉框）
-│   │   │   └── shared.module.ts                # 共享模块文件
-│   │   ├── app.component.ts                    # 根组件
-│   │   └── app.module.ts                       # 根模块
-│   │   └── delon.module.ts                     # @delon模块导入
-│   ├── assets                                  # 本地静态资源
-│   ├── environments                            # 环境变量配置
-│   ├── styles                                  # 样式目录
-│   ├── index.html
-│   ├── main.ts
-│   └── style.scee
-├── angular.json                                # angular 配置文件
-├── proxy.config.json                           # 代理配置
-├── tsconfig.json                               # ts 配置文件
-├── tsconfig.app.jaon
-└── README.md

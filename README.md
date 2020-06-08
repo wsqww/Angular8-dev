@@ -62,10 +62,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 │   ├── styles                                  # 样式目录
 │   ├── index.html
 │   ├── main.ts
-│   └── style.scee
+│   └── style.scss
 ├── angular.json                                # angular 配置文件
 ├── proxy.config.json                           # 代理配置
 ├── tsconfig.json                               # ts 配置文件
-├── tsconfig.app.jaon
+├── tsconfig.app.json
 └── README.md
 ```

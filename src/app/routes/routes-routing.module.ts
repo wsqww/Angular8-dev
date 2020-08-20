@@ -7,6 +7,7 @@ import { AudioComponent } from './test/audio/audio.component';
 import { BehaviorSubjectComponent } from './behavior-subject/behavior-subject.component';
 import { UploadComponent } from './upload/upload.component';
 import { AnimationComponent } from './animation/animation.component';
+import { NgZoneDemoComponent } from './ng-zone-demo/ng-zone-demo.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,9 @@ const routes: Routes = [
   },
   {
     path: 'animation', component: AnimationComponent, data: { animation: 'Animation' }
+  },
+  {
+    path: 'ng_zone_demo', component: NgZoneDemoComponent, data: { animation: 'NgZoneDemo' }
   },
   { path: '**', redirectTo: '/' }
 ];

@@ -16,6 +16,7 @@ import { SendComponent } from './behavior-subject/send/send.component';
 import { AcceptComponent } from './behavior-subject/accept/accept.component';
 import { UploadComponent } from './upload/upload.component';
 import { AnimationComponent } from './animation/animation.component';
+import { NgZoneDemoComponent } from './ng-zone-demo/ng-zone-demo.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { AnimationComponent } from './animation/animation.component';
     AcceptComponent,
     UploadComponent,
     AnimationComponent,
+    NgZoneDemoComponent,
   ],
   imports: [
     CommonModule,

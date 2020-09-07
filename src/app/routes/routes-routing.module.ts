@@ -8,6 +8,7 @@ import { BehaviorSubjectComponent } from './behavior-subject/behavior-subject.co
 import { UploadComponent } from './upload/upload.component';
 import { AnimationComponent } from './animation/animation.component';
 import { NgZoneDemoComponent } from './ng-zone-demo/ng-zone-demo.component';
+import { PaginationTestComponent } from './pagination-test/pagination-test.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,9 @@ const routes: Routes = [
   },
   {
     path: 'ng_zone_demo', component: NgZoneDemoComponent, data: { animation: 'NgZoneDemo' }
+  },
+  {
+    path: 'pagination_test', component: PaginationTestComponent
   },
   { path: '**', redirectTo: '/' }
 ];

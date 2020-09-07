@@ -17,6 +17,7 @@ import { AcceptComponent } from './behavior-subject/accept/accept.component';
 import { UploadComponent } from './upload/upload.component';
 import { AnimationComponent } from './animation/animation.component';
 import { NgZoneDemoComponent } from './ng-zone-demo/ng-zone-demo.component';
+import { PaginationTestComponent } from './pagination-test/pagination-test.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { NgZoneDemoComponent } from './ng-zone-demo/ng-zone-demo.component';
     UploadComponent,
     AnimationComponent,
     NgZoneDemoComponent,
+    PaginationTestComponent,
   ],
   imports: [
     CommonModule,

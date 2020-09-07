@@ -1,20 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AudioPlayerComponent } from './utils/audio-player/audio-player.component';
+import { PaginationComponent } from './utils/pagination/pagination.component';
 
 
 
 @NgModule({
   declarations: [
-    AudioPlayerComponent
+    AudioPlayerComponent,
+    PaginationComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     FormsModule,
-    AudioPlayerComponent
+    ReactiveFormsModule,
+    AudioPlayerComponent,
+    PaginationComponent
   ]
 })
 export class SharedModule { }

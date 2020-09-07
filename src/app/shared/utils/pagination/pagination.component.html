@@ -1,0 +1,30 @@
+<div class="pagination">
+  <div class="pagination-left">
+    <div class="page-size">
+      <span (click)="toggleMorePageSize()">{{selectedPageSize}}条/页</span>
+      <ul *ngIf="morePageSize">
+          <ng-container *ngFor="let size of pageSize">
+            <li *ngIf="size !== selectedPageSize" (click)="selectPageSize(size)">{{size}}条/页</li>
+          </ng-container>
+      </ul>
+    </div>
+    <div class="page-info">共{{pageData.dataTotal}}条数据，当前第{{pageData.pageCurrent}}页，共{{pageData.pageTotal}}页</div>
+  </div>
+  <div class="pagination-right">
+    <ul class="page-num">
+      <li class="previous">
+        <a href="javascript: void(0);" [class.disabled]="pageData.pageCurrent <= 1" (click)="pageSelect(pageData.pageCurrent - 1)">&laquo;</a>
+      </li>
+      <li *ngFor="let page of showPages" class="">
+        <a href="javascript: void(0);" [class.active]="page === pageData.pageCurrent" (click)="pageSelect(page)">{{page}}</a>
+      </li>
+      <li class="next">
+        <a href="javascript: void(0);" [class.disabled]="pageData.pageCurrent >= pageData.pageTotal" (click)="pageSelect(pageData.pageCurrent + 1)">&raquo;</a>
+      </li>
+    </ul>
+    <div class="page-jump">
+      跳转到<input #iptPage type="number" min="1" [max]="pageData.pageTotal" [formControl]="jumpPage" (keyup.enter)="pageSelect(jumpPage.value)">页 
+      <button type="button" (click)="pageSelect(jumpPage.value)">确定</button>
+    </div>
+  </div>
+</div>

@@ -6,7 +6,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  height: 36px;
   padding: 0 10px;
   .pagination-left {
     .page-size {
@@ -14,7 +13,7 @@
       width: 100px;
       height: 28px;
       line-height: 28px;
-      margin: 5px 10px 5px 0;
+      margin: 4px 10px 4px 0;
       border: 1px solid #d3d3d4;
       border-radius: 2px;
       color: #666;

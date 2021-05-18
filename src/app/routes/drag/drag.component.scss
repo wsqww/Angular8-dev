@@ -1,0 +1,25 @@
+.drag {
+  table {
+    width: 500px;
+    margin: 50px auto;
+    border-collapse: collapse;
+    th, td {
+      vertical-align: middle;
+      text-align: center;
+      line-height: 40px;
+      border: 1px solid #ddd;
+    }
+    td.drag-wrap {
+      .drag-item {
+        border-bottom: 1px solid #ddd;
+        cursor: pointer;
+        &.drag-over {
+          background-color: skyblue;
+        }
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
+  }
+}

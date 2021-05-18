@@ -18,6 +18,7 @@ import { UploadComponent } from './upload/upload.component';
 import { AnimationComponent } from './animation/animation.component';
 import { NgZoneDemoComponent } from './ng-zone-demo/ng-zone-demo.component';
 import { PaginationTestComponent } from './pagination-test/pagination-test.component';
+import { DragComponent } from './drag/drag.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { PaginationTestComponent } from './pagination-test/pagination-test.compo
     AnimationComponent,
     NgZoneDemoComponent,
     PaginationTestComponent,
+    DragComponent,
   ],
   imports: [
     CommonModule,

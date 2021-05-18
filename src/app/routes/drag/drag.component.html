@@ -1,0 +1,22 @@
+<div class="drag">
+  <table>
+    <thead>
+      <tr>
+        <th>标题A</th>
+        <th>标题B</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of list; let parentIndex = index">
+        <td>{{item.name}}</td>
+        <td class="drag-wrap">
+          <ng-container *ngFor="let opt of item.options; let index = index">
+            <div class="drag-item" draggable="true"
+              (dragstart)="onDragStart(parentIndex, $event, index)" (dragend)="onDragEnd($event, index)"
+              (dragover)="onDragOver($event)" (drop)="onDrop(parentIndex, $event, index)">{{opt}}</div>
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

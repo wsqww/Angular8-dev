@@ -9,6 +9,7 @@ import { UploadComponent } from './upload/upload.component';
 import { AnimationComponent } from './animation/animation.component';
 import { NgZoneDemoComponent } from './ng-zone-demo/ng-zone-demo.component';
 import { PaginationTestComponent } from './pagination-test/pagination-test.component';
+import { DragComponent } from './drag/drag.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,9 @@ const routes: Routes = [
   },
   {
     path: 'pagination_test', component: PaginationTestComponent
+  },
+  {
+    path: 'drag', component: DragComponent
   },
   { path: '**', redirectTo: '/' }
 ];

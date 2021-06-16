@@ -16,29 +16,29 @@ const routes: Routes = [
   {
     path: 'test', component: TestComponent,
     children: [
-      { path: 'audio', component: AudioComponent }
+      { path: 'audio', component: AudioComponent, data: {title: 'audio'} }
     ]
   },
   {
-    path: 'behaviorsubject', component: BehaviorSubjectComponent
+    path: 'behaviorsubject', component: BehaviorSubjectComponent, data: {title: 'rxjs '}
   },
   {
-    path: 'upload', component: UploadComponent
+    path: 'upload', component: UploadComponent, data: {title: 'upload image'}
   },
   {
-    path: 'animation', component: AnimationComponent, data: { animation: 'Animation' }
+    path: 'animation', component: AnimationComponent, data: { title: 'animation', animation: 'animation' }
   },
   {
-    path: 'ng_zone_demo', component: NgZoneDemoComponent
+    path: 'ng_zone_demo', component: NgZoneDemoComponent, data: {title: 'ng zone demo'}
   },
   {
-    path: 'pagination_test', component: PaginationTestComponent
+    path: 'pagination_test', component: PaginationTestComponent, data: {title: 'pagination test'}
   },
   {
-    path: 'drag', component: DragComponent
+    path: 'drag', component: DragComponent, data: {title: 'drag'}
   },
   {
-    path: 'rxjs', component: RxjsComponent
+    path: 'rxjs', component: RxjsComponent, data: {title: 'rxjs'}
   },
   { path: '**', redirectTo: '/' }
 ];

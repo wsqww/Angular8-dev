@@ -10,31 +10,35 @@ import { AnimationComponent } from './animation/animation.component';
 import { NgZoneDemoComponent } from './ng-zone-demo/ng-zone-demo.component';
 import { PaginationTestComponent } from './pagination-test/pagination-test.component';
 import { DragComponent } from './drag/drag.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 const routes: Routes = [
   {
-    path: 'test', component: TestComponent, data: { animation: 'Test' },
+    path: 'test', component: TestComponent,
     children: [
-      { path: 'audio', component: AudioComponent, data: { animation: 'Audio' } }
+      { path: 'audio', component: AudioComponent }
     ]
   },
   {
-    path: 'behaviorsubject', component: BehaviorSubjectComponent, data: { animation: 'Behaviorsubject' }
+    path: 'behaviorsubject', component: BehaviorSubjectComponent
   },
   {
-    path: 'upload', component: UploadComponent, data: { animation: 'Upload' }
+    path: 'upload', component: UploadComponent
   },
   {
     path: 'animation', component: AnimationComponent, data: { animation: 'Animation' }
   },
   {
-    path: 'ng_zone_demo', component: NgZoneDemoComponent, data: { animation: 'NgZoneDemo' }
+    path: 'ng_zone_demo', component: NgZoneDemoComponent
   },
   {
     path: 'pagination_test', component: PaginationTestComponent
   },
   {
     path: 'drag', component: DragComponent
+  },
+  {
+    path: 'rxjs', component: RxjsComponent
   },
   { path: '**', redirectTo: '/' }
 ];

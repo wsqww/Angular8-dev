@@ -27,6 +27,7 @@
       "@shared/*":  [ "app/shared/*" ],
       "@env/*":     [ "environments/*" ]
     },
+    "skipLibCheck": true
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

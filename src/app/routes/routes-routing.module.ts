@@ -11,6 +11,7 @@ import { NgZoneDemoComponent } from './ng-zone-demo/ng-zone-demo.component';
 import { PaginationTestComponent } from './pagination-test/pagination-test.component';
 import { DragComponent } from './drag/drag.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { MonacoComponent } from './monaco/monaco.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,9 @@ const routes: Routes = [
   },
   {
     path: 'rxjs', component: RxjsComponent, data: {title: 'rxjs'}
+  },
+  {
+    path: 'monaco', component: MonacoComponent, data: {title: 'monaco'}
   },
   { path: '**', redirectTo: '/' }
 ];

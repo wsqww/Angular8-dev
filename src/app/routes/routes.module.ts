@@ -20,6 +20,7 @@ import { NgZoneDemoComponent } from './ng-zone-demo/ng-zone-demo.component';
 import { PaginationTestComponent } from './pagination-test/pagination-test.component';
 import { DragComponent } from './drag/drag.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { MonacoComponent } from './monaco/monaco.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     PaginationTestComponent,
     DragComponent,
     RxjsComponent,
+    MonacoComponent,
   ],
   imports: [
     CommonModule,

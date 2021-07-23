@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ApiService } from '@core/service/api/api.service';
+import { ApiService } from '@pc-core/service/api/api.service';
 
 @Component({
   selector: 'app-upload',

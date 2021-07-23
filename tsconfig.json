@@ -19,12 +19,18 @@
       "dom"
     ],
     "paths": {
-      "@core":      [ "app/core/index" ],
-      "@core/*":    [ "app/core/*" ],
-      "@layout/*":  [ "app/layout/*" ],
-      "@routes/*":  [ "app/routes/*" ],
-      "@shared":    [ "app/shared/index" ],
-      "@shared/*":  [ "app/shared/*" ],
+      "@pc-core":      [ "app/pc/core/index" ],
+      "@pc-core/*":    [ "app/pc/core/*" ],
+      "@pc-layout/*":  [ "app/pc/layout/*" ],
+      "@pc-routes/*":  [ "app/pc/routes/*" ],
+      "@pc-shared":    [ "app/pc/shared/index" ],
+      "@pc-shared/*":  [ "app/pc/shared/*" ],
+      "@h5-core":      [ "app/h5/core/index" ],
+      "@h5-core/*":    [ "app/h5/core/*" ],
+      "@h5-layout/*":  [ "app/h5/layout/*" ],
+      "@h5-routes/*":  [ "app/h5/routes/*" ],
+      "@h5-shared":    [ "app/h5/shared/index" ],
+      "@h5-shared/*":  [ "app/h5/shared/*" ],
       "@env/*":     [ "environments/*" ]
     },
     "skipLibCheck": true

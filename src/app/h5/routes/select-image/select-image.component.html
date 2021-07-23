@@ -1,0 +1,14 @@
+<div class="select-image">
+  <ul class="image-list">
+    <!-- <li class="image"></li> -->
+    <li class="img-input">
+      <input type="file" multiple (change)="selectedImage($event)">
+    </li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let item of files">
+      {{item.name}}
+    </li>
+  </ul>
+</div>

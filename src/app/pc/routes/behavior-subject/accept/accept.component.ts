@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubjectService } from '@core/service/behavior-subject/behavior-subject.service';
+import { BehaviorSubjectService } from '@pc-core/service/behavior-subject/behavior-subject.service';
 
 @Component({
   selector: 'app-behavior-subject-accept',

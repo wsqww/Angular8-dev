@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AudioPlayerService } from '@shared/utils/audio-player/audio-player.service';
+import { AudioPlayerService } from '@pc-shared/utils/audio-player/audio-player.service';
 
 @Component({
   selector: 'app-audio',

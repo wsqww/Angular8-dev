@@ -1,0 +1,38 @@
+.select-image {
+  padding: .1rem;
+
+  .image-list {
+    display: flex;
+    li {
+      width: .96rem;
+      height: .96rem;
+      margin-right: .1rem;
+      border: 1px solid #999;
+
+      &.img-input {
+        position: relative;
+        input {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          opacity: 0;
+        }
+        &:before,
+        &:after {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          display: block;
+          content: '';
+          width: .32rem;
+          height: 1px;
+          background-color: #aaa;
+          transform: translateX(-50%);
+        }
+        &:after {
+          transform: translateX(-50%) rotate(90deg);
+        }
+      }
+    }
+  }
+}

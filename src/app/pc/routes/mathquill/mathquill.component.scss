@@ -1,0 +1,10 @@
+
+.text {
+  ::ng-deep table.insert-tab {
+    width: 100%;
+    th, td {
+      border: 1px solid #999;
+      height: 30px;
+    }
+  }
+}

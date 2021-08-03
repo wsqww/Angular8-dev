@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AudioPlayerComponent } from './utils/audio-player/audio-player.component';
 import { PaginationComponent } from './utils/pagination/pagination.component';
+import { SafeHTMLPipe } from './pipe/safe-html.pipe';
 
 
 
 @NgModule({
   declarations: [
     AudioPlayerComponent,
-    PaginationComponent
+    PaginationComponent,
+    SafeHTMLPipe,
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { PaginationComponent } from './utils/pagination/pagination.component';
     FormsModule,
     ReactiveFormsModule,
     AudioPlayerComponent,
-    PaginationComponent
+    PaginationComponent,
+    SafeHTMLPipe,
   ]
 })
 export class SharedModule { }

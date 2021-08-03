@@ -14,6 +14,7 @@ import { PaginationTestComponent } from '@pc-routes/pagination-test/pagination-t
 import { DragComponent } from '@pc-routes/drag/drag.component';
 import { RxjsComponent } from '@pc-routes/rxjs/rxjs.component';
 import { MonacoComponent } from '@pc-routes/monaco/monaco.component';
+import { MathquillComponent } from './routes/mathquill/mathquill.component';
 
 const routes: Routes = [{
   path: '', component: PcComponent,
@@ -47,6 +48,9 @@ const routes: Routes = [{
     },
     {
       path: 'monaco', component: MonacoComponent, data: {title: 'monaco'}
+    },
+    {
+      path: 'mathquill', component: MathquillComponent, data: {title: 'monaco'}
     },
     { path: '**', redirectTo: 'test/audio', pathMatch: 'full' },
   ]

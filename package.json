@@ -20,8 +20,11 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@types/jquery": "^3.5.6",
+    "jquery": "^3.6.0",
     "monaco-editor": "^0.25.2",
     "ng-zorro-antd": "^9.1.2",
+    "ngx-mathquill": "^2.1.5",
     "rxjs": "^6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

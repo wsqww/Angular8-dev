@@ -30,6 +30,7 @@ import { PaginationTestComponent } from '@pc-routes/pagination-test/pagination-t
 import { DragComponent } from '@pc-routes/drag/drag.component';
 import { RxjsComponent } from '@pc-routes/rxjs/rxjs.component';
 import { MonacoComponent } from '@pc-routes/monaco/monaco.component';
+import { MathquillComponent } from './routes/mathquill/mathquill.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { MonacoComponent } from '@pc-routes/monaco/monaco.component';
     DragComponent,
     RxjsComponent,
     MonacoComponent,
+    MathquillComponent,
   ],
   imports: [
     CommonModule,

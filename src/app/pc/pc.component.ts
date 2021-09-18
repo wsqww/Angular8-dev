@@ -35,6 +35,8 @@ import { PageAnimations } from '@pc-shared/animations/page.animations';
     }
     .page>.page-main {
       flex: 1;
+      height: 100%;
+      overflow: auto;
     }`,
   ],
   animations: [PageAnimations]

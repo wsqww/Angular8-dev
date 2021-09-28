@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 // RxJs v6+
-import { Observable, fromEvent, of, interval, EMPTY, from, range, combineLatest, zip } from 'rxjs';
-import { map, switchMap, take, concatAll, concatMap, takeUntil, mapTo, mergeMap, pluck, scan, repeat, buffer, debounceTime, throttleTime, distinct, filter, first, skip, mergeAll, startWith } from 'rxjs/operators';
+import { Observable, fromEvent, of, interval, EMPTY, from, range, combineLatest, zip, Subject, ReplaySubject } from 'rxjs';
+import { map, switchMap, take, concatAll, concatMap, takeUntil, mapTo, mergeMap, pluck, scan, repeat, buffer, debounceTime, throttleTime, distinct, filter, first, skip, mergeAll, startWith, share } from 'rxjs/operators';
 
 /**
  * 首先畫面上有一個元件(#drag)
@@ -277,6 +277,107 @@ export class RxjsComponent implements OnInit, AfterViewInit {
     const source = fromEvent(btn, 'click');
     const result = source.pipe( switchMap(x => interval(1000).pipe( take(3) ) ) );
     this.obsSub(result, 'switchMap');
+  }
+
+  // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+  // 冷/热 Observable >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+  // cold Observable
+  // 推送值的生产者 producer 来自 observable 内部。将会推送什么样的值在 observable 创建时被定义下来，不会改变
+  // producer 与 observer 是一对一的关系，即是 unicast (单播)的。
+  // 当有 observer 订阅时，producer 会把预先定义好的若干值依次推送给每个 observer
+  mColdObservable() {
+    const source = new Observable(subscriber => {
+      console.log('stream 开始');
+      subscriber.next(1);
+      subscriber.next(2);
+      subscriber.next(3);
+      subscriber.next(4);
+      console.log('steam 结束');
+      subscriber.complete();
+    });
+
+    source.subscribe(data => console.log(`Observable 第一次订阅: ${data}`));
+    // 1, 2, 3, 4
+    source.subscribe(data => console.log(`Observable 第二次订阅: ${data}`));
+    // 1, 2, 3, 4
+  }
+
+  // hot Observable
+  // 推送值的producer来自observable外部，何时推送以及推送什么样的值在创建时都是未知的。producer与observer是一对多的关系，即multicast (多播)的。
+  // 每当有observer订阅时，会将observer注册到观察者列表中。
+  // 当外部的producer被触发或执行时，会将值同时推送给所有的observer
+  mHotObservable() {
+    const source$ = new Subject();
+    source$.subscribe(data => console.log(`Subject 第一次订阅: ${data}`));
+    // 1, 2, 3, 4
+    source$.next(1);
+    source$.next(2);
+    source$.subscribe(data => console.log(`Subject 第二次订阅: ${data}`));
+    // 3, 4
+    source$.next(3);
+    source$.next(4);
+    source$.subscribe(data => console.log(`Subject 第三次订阅: ${data}`));
+    // (沒收到任何事件就结束了)
+    source$.complete();
+  }
+
+  mWarmObservable() {
+    const source$ = new Observable(observe => {
+      console.log('stream 开始');
+      setTimeout(() => observe.next(1), 100);
+      setTimeout(() => observe.next(2), 200);
+      setTimeout(() => observe.next(3), 300);
+      setTimeout(() => {
+        observe.next(4);
+        observe.complete();
+        console.log('stream 结束');
+      }, 400);
+    });
+
+    const hotSource$ = source$.pipe( share() );
+
+    setTimeout(() => {
+      hotSource$.subscribe(data => console.log(`Observable 第一次订阅： ${data}`));
+      setTimeout(() => {
+        hotSource$.subscribe(data => console.log(`Observable 第二次订阅：${data}`));
+      }, 200);
+    }, 1000);
+  }
+
+  // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+  // 多播操作符 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+  // 多播暖模式
+  mPubHot1() {
+    const source = interval(1000).pipe(take(3), share());
+    source.subscribe((x) => console.log(x));
+    setTimeout(() => {
+      source.subscribe((x) => console.log('setTimeout2', x));
+    }, 2000);
+    setTimeout(() => {
+      source.subscribe((x) => console.log('setTimeout3', x));
+    }, 3000);
+  }
+
+  mPubHot2() {
+    const source = new ReplaySubject();
+    source.subscribe((x) => console.log(x));
+    source.next(1);
+    source.next(2);
+    // setTimeout(() => { source.next(3); }, 2000);
+    // setTimeout(() => { source.next(4); }, 3000);
+    setTimeout(() => { source.next(5); }, 4000);
+    setTimeout(() => {
+      source.next(3);
+      source.subscribe((x) => console.log('setTimeout2', x));
+    }, 2000);
+    setTimeout(() => {
+      source.next(4);
+      source.subscribe((x) => console.log('setTimeout3', x));
+    }, 3000);
   }
 
   // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

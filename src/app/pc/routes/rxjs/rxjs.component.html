@@ -1,51 +1,61 @@
 <!-- <div id="drag" style="position: fixed; width: 100px; height: 100px;background-color: red;">drag</div> -->
-
-<ul style="list-style: disc; margin: 20px 0; padding: 0 30px;">
-  <li>Rxjs 操作符</li>
-  <li>创建</li>
-  <li><button (click)="mCreate()">create</button></li>
-  <li><button (click)="mFrom()">from</button></li>
-  <li><button (click)="mFromEvent()">fromEvent</button><button id="fromEvent">fromEvent click</button></li>
-  <li><button (click)="mFromPromise()">fromPromise</button></li>
-  <li><button (click)="mInterval()">interval</button></li>
-  <li><button (click)="mRepeat()">repeat</button></li>
-  <li><button (click)="mRange()">range</button></li>
-  <li><button (click)="mBuffer()">buffer start</button><button id="bufferEnd">buffer end</button></li>
-  <li><button (click)="mOf()">of</button></li>
-  <li></li>
-  <li>转换操作符</li>
-  <li><button (click)="mMap()">map</button></li>
-  <li><button (click)="mMapTo()">mapTo</button></li>
-  <li><button (click)="mMergeMap()">mergeMap</button></li>
-  <li><button (click)="mConcatMap()">concatMap</button></li>
-  <li><button (click)="mPluck()">pluck</button></li>
-  <li><button (click)="mScan()">scan</button></li>
-  <li><button (click)="mSwitchMap()">switchMap</button></li>
-  <li></li>
-  <li>过滤操作符</li>
-  <li><button (click)="mDebounceTime()">debounceTime</button></li>
-  <li><button (click)="mThrottleTime()">throttleTime</button></li>
-  <li><button (click)="mDistinct()">distinct</button></li>
-  <li><button (click)="mFilter()">filter</button></li>
-  <li><button (click)="mFirst()">first</button></li>
-  <li><button (click)="mTake()">take</button></li>
-  <li><button (click)="mSkip()">skip</button></li>
-  <li></li>
-  <li>组合操作符</li>
-  <li><button (click)="mConcatAll()">concatAll</button></li>
-  <li><button (click)="mMergeAll()">mergeAll</button></li>
-  <li><button (click)="mCombineLatest()">combineLatest</button></li>
-  <li><button (click)="mZip()">zip</button></li>
-  <li><button (click)="mStartWith()">startWith</button></li>
-  <li><button (click)="mSwitch()">switch</button> <button id="switch">switchStart</button></li>
-  <li></li>
-  <li>冷/热 Observable</li>
-  <li><button (click)="mColdObservable()">Cold Observable</button></li>
-  <li><button (click)="mHotObservable()">Hot Observable</button></li>
-  <li><button (click)="mWarmObservable()">Warm Observable</button></li>
-  <li></li>
-  <li>多播操作符</li>
-  <li><button (click)="mPubHot1()">多播暖模式1</button></li>
-  <li><button (click)="mPubHot2()">多播暖模式2</button></li>
-  <li></li>
-</ul>
+<div class="main">
+  <h3>Rxjs</h3>
+  <ul>
+    <li>创建</li>
+    <li><button (click)="mCreate()">create</button></li>
+    <li><button (click)="mFrom()">from</button></li>
+    <li><button (click)="mFromEvent()">fromEvent</button><button id="fromEvent">fromEvent click</button></li>
+    <li><button (click)="mFromPromise()">fromPromise</button></li>
+    <li><button (click)="mInterval()">interval</button></li>
+    <li><button (click)="mRepeat()">repeat</button></li>
+    <li><button (click)="mRange()">range</button></li>
+    <li><button (click)="mBuffer()">buffer start</button><button id="bufferEnd">buffer end</button></li>
+    <li><button (click)="mOf()">of</button></li>
+  </ul>
+  <ul>
+    <li>转换操作符</li>
+    <li><button (click)="mMap()">map</button></li>
+    <li><button (click)="mMapTo()">mapTo</button></li>
+    <li><button (click)="mMergeMap()">mergeMap</button></li>
+    <li><button (click)="mConcatMap()">concatMap</button></li>
+    <li><button (click)="mPluck()">pluck</button></li>
+    <li><button (click)="mScan()">scan</button></li>
+    <li><button (click)="mSwitchMap()">switchMap</button></li>
+  </ul>
+  <ul>
+    <li>过滤操作符</li>
+    <li><button (click)="mDebounceTime()">debounceTime</button></li>
+    <li><button (click)="mThrottleTime()">throttleTime</button></li>
+    <li><button (click)="mDistinct()">distinct</button></li>
+    <li><button (click)="mFilter()">filter</button></li>
+    <li><button (click)="mFirst()">first</button></li>
+    <li><button (click)="mTake()">take</button></li>
+    <li><button (click)="mSkip()">skip</button></li>
+  </ul>
+  <ul>
+    <li>组合操作符</li>
+    <li><button (click)="mConcatAll()">concatAll</button></li>
+    <li><button (click)="mMergeAll()">mergeAll</button></li>
+    <li><button (click)="mCombineLatest()">combineLatest</button></li>
+    <li><button (click)="mZip()">zip</button></li>
+    <li><button (click)="mStartWith()">startWith</button></li>
+    <li><button (click)="mSwitch()">switch</button> <button id="switch">switchStart</button></li>
+  </ul>
+  <ul>
+    <li>冷/热 Observable</li>
+    <li><button (click)="mColdObservable()">Cold Observable</button></li>
+    <li><button (click)="mHotObservable()">Hot Observable</button></li>
+    <li><button (click)="mWarmObservable()">Warm Observable</button></li>
+  </ul>
+  <ul>
+    <li>多播操作符</li>
+    <li><button (click)="mPubHot1()">多播暖模式1</button></li>
+    <li><button (click)="mPubHot2()">多播暖模式2</button></li>
+  </ul>
+  <ul>
+    <li>Subject</li>
+    <li><button (click)="mSubjectAndObservable()">Subject 对比 Observable</button></li>
+    <li><button (click)="mBehaviorSubject()">BehaviorSubject</button></li>
+  </ul>
+</div>

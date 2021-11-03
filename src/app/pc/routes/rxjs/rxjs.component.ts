@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 // RxJs v6+
-import { Observable, fromEvent, of, interval, EMPTY, from, range, combineLatest, zip, Subject, ReplaySubject } from 'rxjs';
+import { Observable, fromEvent, of, interval, EMPTY, from, range, combineLatest, zip, Subject, ReplaySubject, BehaviorSubject } from 'rxjs';
 import { map, switchMap, take, concatAll, concatMap, takeUntil, mapTo, mergeMap, pluck, scan, repeat, buffer, debounceTime, throttleTime, distinct, filter, first, skip, mergeAll, startWith, share } from 'rxjs/operators';
 
 /**
@@ -378,6 +378,66 @@ export class RxjsComponent implements OnInit, AfterViewInit {
       source.next(4);
       source.subscribe((x) => console.log('setTimeout3', x));
     }, 3000);
+  }
+
+  // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+  // Subject >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+  mSubjectAndObservable() {
+    const source = new Subject();
+    // 先订阅
+    source.subscribe((data) => console.log(`Subject 第一次订阅: ${data}`));
+    // 触发next方法，推送数据流
+    source.next(1);
+    source.next(2);
+    source.subscribe((data) => console.log(`Subject 第二次订阅: ${data}`));
+    // 这里第一次订阅也会收到消息，multicast
+    source.next(3);
+    source.next(4);
+    source.subscribe((data) => console.log(`Subject 第三次订阅: ${data}`));
+    source.complete();
+    const source2 = new Observable((subscriber) => {
+      console.log('stream 开始');
+      // 建立对象时，决定好数据流向，等待外部订阅
+      subscriber.next(1);
+      subscriber.next(2);
+      subscriber.next(3);
+      subscriber.next(4);
+      console.log('steam 结束');
+      subscriber.complete();
+    });
+    source2.subscribe((data) =>
+      console.log(`Observable 第一次订阅: ${data}`)
+    );
+    // 每次订阅都独立的，一对一，unicast Cold Observalbe 参考1.4
+    source2.subscribe((data) =>
+      console.log(`Observable 第二次订阅: ${data}`)
+    );
+  }
+
+  mBehaviorSubject() {
+    const source = new BehaviorSubject(0);
+    source.subscribe((data) =>
+      console.log(`BehaviorSubject 第一次订阅: ${data}`)
+    );
+    // BehaviorSubject 第一次订阅: 0
+    source.next(1);
+    // BehaviorSubject 第一次订阅: 1
+    source.next(2);
+    // BehaviorSubject 第一次订阅: 2
+    source.subscribe((data) =>
+      console.log(`BehaviorSubject 第二次订阅: ${data}`)
+    );
+    // BehaviorSubject 第二次订阅: 2
+    source.next(3);
+    // BehaviorSubject 第一次订阅: 3
+    // BehaviorSubject 第二次订阅: 3
+    source.next(4);
+    // BehaviorSubject 第一次订阅: 4
+    // BehaviorSubject 第二次订阅: 4
+    console.log(`目前 BehaviorSubject 的内容为: ${source.value}`);
+    // 目前 BehaviorSubject 的内容为: 4
   }
 
   // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

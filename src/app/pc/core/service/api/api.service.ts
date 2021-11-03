@@ -12,6 +12,8 @@ export class ApiService {
 
   public localKoaHost = '/localkoa';
 
+  public flomoApi = '/flomoapp'; // 'https://flomoapp.com'
+
   // 上传文件  获取进度
   uploadTest(file) {
     const body = new FormData();
@@ -42,4 +44,12 @@ export class ApiService {
         return `File "${file.name}" surprising upload event: ${event.type}.`;
     }
   }
+
+  // flomoApiTest(text) {
+  //   const body = {
+  //     content: text
+  //   };
+  //   return this.http.post(`${this.flomoApi}/iwh/MjQzNjkx/6aeb8b10ed430a239b10f2c3b9163b47/`, body);
+  // }
+
 }

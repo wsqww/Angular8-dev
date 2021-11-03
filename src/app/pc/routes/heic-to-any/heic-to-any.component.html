@@ -1,0 +1,7 @@
+<p>heic-to-any works!</p>
+
+<input type="file" (change)="imgChange($event)">
+
+<br>
+
+<img style="width: 300px;" [src]="imgSrc | safeUrl" alt="">

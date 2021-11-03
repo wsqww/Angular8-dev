@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "@types/jquery": "^3.5.6",
+    "heic2any": "0.0.3",
     "jquery": "^3.6.0",
     "monaco-editor": "^0.25.2",
     "ng-zorro-antd": "^9.1.2",

@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AudioPlayerComponent } from './utils/audio-player/audio-player.component';
 import { PaginationComponent } from './utils/pagination/pagination.component';
 import { SafeHTMLPipe } from './pipe/safe-html.pipe';
+import { SafeUrlPipe } from './pipe/safe-url.pipe';
 
 
 
@@ -12,6 +13,7 @@ import { SafeHTMLPipe } from './pipe/safe-html.pipe';
     AudioPlayerComponent,
     PaginationComponent,
     SafeHTMLPipe,
+    SafeUrlPipe,
   ],
   imports: [
     CommonModule,
@@ -24,6 +26,7 @@ import { SafeHTMLPipe } from './pipe/safe-html.pipe';
     AudioPlayerComponent,
     PaginationComponent,
     SafeHTMLPipe,
+    SafeUrlPipe,
   ]
 })
 export class SharedModule { }

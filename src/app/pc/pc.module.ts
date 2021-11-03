@@ -31,6 +31,7 @@ import { DragComponent } from '@pc-routes/drag/drag.component';
 import { RxjsComponent } from '@pc-routes/rxjs/rxjs.component';
 import { MonacoComponent } from '@pc-routes/monaco/monaco.component';
 import { MathquillComponent } from './routes/mathquill/mathquill.component';
+import { HeicToAnyComponent } from './routes/heic-to-any/heic-to-any.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { MathquillComponent } from './routes/mathquill/mathquill.component';
     RxjsComponent,
     MonacoComponent,
     MathquillComponent,
+    HeicToAnyComponent,
   ],
   imports: [
     CommonModule,

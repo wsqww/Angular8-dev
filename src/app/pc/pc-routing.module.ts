@@ -15,6 +15,7 @@ import { DragComponent } from '@pc-routes/drag/drag.component';
 import { RxjsComponent } from '@pc-routes/rxjs/rxjs.component';
 import { MonacoComponent } from '@pc-routes/monaco/monaco.component';
 import { MathquillComponent } from './routes/mathquill/mathquill.component';
+import { HeicToAnyComponent } from './routes/heic-to-any/heic-to-any.component';
 
 const routes: Routes = [{
   path: '', component: PcComponent,
@@ -50,7 +51,10 @@ const routes: Routes = [{
       path: 'monaco', component: MonacoComponent, data: {title: 'monaco'}
     },
     {
-      path: 'mathquill', component: MathquillComponent, data: {title: 'monaco'}
+      path: 'mathquill', component: MathquillComponent, data: {title: 'mathquill'}
+    },
+    {
+      path: 'heic2any', component: HeicToAnyComponent, data: {title: 'heic2any'}
     },
     { path: '**', redirectTo: 'test/audio', pathMatch: 'full' },
   ]

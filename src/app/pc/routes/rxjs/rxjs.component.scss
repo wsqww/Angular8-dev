@@ -1,0 +1,21 @@
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px;
+  h3 {
+    width: 100%;
+  }
+  ul {
+    list-style: disc;
+    width: 50%;
+    padding: 15px 30px;
+    border-bottom: 1px solid #eeeeee;
+    &:nth-child(even) {
+      border-right: 1px solid #eeeeee;
+    }
+    li {
+      padding: 2px 0;
+    }
+  }
+}
